@@ -3,7 +3,7 @@ pipeline{
     agent{ node{label 'master' } }
     parameters{
         string(name: 'FileName', defaultValue: '', description: 'Pls supply filename')
-        choice(name: 'FileList', choices:['demo.txt', 'gavin.txt'], description: 'Pick file for testing')
+        choice(name: 'FileList', choices: ['demo.txt', 'gavin.txt'], description: 'Pick file for testing')
     }
 
     stages{
@@ -17,7 +17,6 @@ pipeline{
              sh 'cat README.md'
         }
     }
-      }
     stage('Read file from choice'){
         steps{
              sh "cat ${params.FileList}"

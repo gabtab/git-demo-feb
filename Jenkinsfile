@@ -7,5 +7,10 @@ pipeline{
              sh 'cat demo.txt'
         }
     }
+    stage('Read Readme.md file'){
+        steps{
+             sh 'cat README.md'
+        }
+    }
 }
 }
